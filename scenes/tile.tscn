@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bg6i5k4odlj4d"]
+
+[ext_resource type="Texture2D" uid="uid://clht674lq5mwf" path="res://sprites/tile_empty.png" id="1_3dk36"]
+[ext_resource type="Script" uid="uid://uxj3ktil27jn" path="res://scripts/tile/Tile.cs" id="1_6p3j2"]
+[ext_resource type="Texture2D" uid="uid://ckut6nnih5jqk" path="res://sprites/bomb.png" id="2_q7utx"]
+[ext_resource type="Texture2D" uid="uid://dpqfj6gcovyr6" path="res://sprites/tile_cover.png" id="2_ywnoi"]
+[ext_resource type="FontFile" uid="uid://bxpriicqqg8mw" path="res://fonts/upheavtt.ttf" id="3_jy7pm"]
+[ext_resource type="Texture2D" uid="uid://bsf0dn5rusx4y" path="res://sprites/flag.png" id="6_gtpg2"]
+[ext_resource type="FontFile" uid="uid://bft2rwo0paq5i" path="res://fonts/BlockCraft.otf" id="7_a2bny"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtpg2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 1, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_q7utx"]
+font = ExtResource("3_jy7pm")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gtpg2"]
+font = ExtResource("7_a2bny")
+font_color = Color(1, 0, 0, 1)
+
+[node name="Tile" type="Button" unique_id=1710769256 node_paths=PackedStringArray("emptySprite", "bombSprite", "coverSprite", "flagSprite", "numberLabel", "debugIndexLabel")]
+clip_contents = true
+custom_minimum_size = Vector2(16, 16)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gtpg2")
+action_mode = 0
+button_mask = 7
+flat = true
+script = ExtResource("1_6p3j2")
+emptySprite = NodePath("EmptySprite")
+bombSprite = NodePath("BombSprite")
+coverSprite = NodePath("CoverSprite")
+flagSprite = NodePath("FlagSprite")
+numberLabel = NodePath("NumberLabel")
+debugIndexLabel = NodePath("DebugIndexLabel")
+
+[node name="EmptySprite" type="TextureRect" parent="." unique_id=1773675593]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("1_3dk36")
+
+[node name="BombSprite" type="TextureRect" parent="." unique_id=525203231]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("2_q7utx")
+
+[node name="NumberLabel" type="Label" parent="." unique_id=669546046]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 25.0
+offset_bottom = 24.0
+text = "?"
+label_settings = SubResource("LabelSettings_q7utx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoverSprite" type="TextureRect" parent="." unique_id=276864385]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("2_ywnoi")
+
+[node name="FlagSprite" type="TextureRect" parent="." unique_id=1364881672]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("6_gtpg2")
+
+[node name="DebugIndexLabel" type="Label" parent="." unique_id=863600319]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+text = "i"
+label_settings = SubResource("LabelSettings_gtpg2")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="button_down" from="." to="." method="OnTileButtonDown"]
+[connection signal="mouse_entered" from="." to="." method="OnMouseEntered"]
+[connection signal="mouse_exited" from="." to="." method="OnMouseExited"]

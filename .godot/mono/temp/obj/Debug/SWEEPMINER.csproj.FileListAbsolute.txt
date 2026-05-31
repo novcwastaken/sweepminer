@@ -1,0 +1,17 @@
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/bin/Debug/SWEEPMINER.deps.json
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/bin/Debug/SWEEPMINER.runtimeconfig.json
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/bin/Debug/SWEEPMINER.dll
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/bin/Debug/SWEEPMINER.pdb
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/bin/Debug/GodotSharp.dll
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/bin/Debug/GodotSharpEditor.dll
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.csproj.AssemblyReference.cache
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.GeneratedMSBuildEditorConfig.editorconfig
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.AssemblyInfoInputs.cache
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.AssemblyInfo.cs
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.csproj.CoreCompileInputs.cache
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.csproj.CopyComplete
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.dll
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/refint/SWEEPMINER.dll
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.pdb
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.genruntimeconfig.cache
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/ref/SWEEPMINER.dll

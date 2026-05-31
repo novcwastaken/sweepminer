@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://d1ghjd8i0ibg3"]
+
+[ext_resource type="FontFile" uid="uid://bft2rwo0paq5i" path="res://fonts/BlockCraft.otf" id="1_5t46v"]
+
+[resource]
+default_font = ExtResource("1_5t46v")
+Label/colors/font_color = Color(0, 0, 0, 1)
