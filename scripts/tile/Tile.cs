@@ -73,7 +73,8 @@ public partial class Tile : Button
 
 	public bool IsEmpty()
 	{
-		return numberLabel.Text == "" && !isBomb;
+		//return numberLabel.Text == "" && !isBomb;
+		return numberLabel.Text == "";
 	}
 
 	public int GetAdjacentFlagCount()

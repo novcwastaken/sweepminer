@@ -94,28 +94,17 @@ public partial class GameManager : Node
 		visitedFloodFillIndexes.Add(initialIndex);
 
 		Tile initialTile = tileGrid.GetChild<Tile>(initialIndex);
-		initialTile.Reveal();
 
-		GD.Print($"@@@ Initial tile adjacent indexes: {string.Join(", ", initialTile.adjacentTileIndexes)}");
-
-		GD.Print($"@@@ Looping through adjacent tiles around initial index {initialIndex}");
-		foreach (int adjacentTileIndex in initialTile.adjacentTileIndexes)
+		if (!initialTile.isBomb && !initialTile.isFlagged)
 		{
-			GD.Print($"@@@ --- Current iteration index: {adjacentTileIndex}");
+			initialTile.Reveal();
 
-			Tile currentTile = tileGrid.GetChild<Tile>(adjacentTileIndex);
-			if (!currentTile.IsEmpty()) continue; // !!!
-			
-			currentTile.Reveal();
+			if (!initialTile.IsEmpty()) return;
 
-			GD.Print($"@@@ --- Is empty? {currentTile.IsEmpty()}");
-			GD.Print($"@@@ --- Is flagged? {currentTile.isFlagged}");
-
-			if (currentTile.IsEmpty() && !currentTile.isFlagged)
+			foreach (int adjacentTileIndex in initialTile.adjacentTileIndexes)
 			{
-				GD.Print($"@@@ --- RECURSIVE FLOOD FILL TRIGGERED FOR INDEX {adjacentTileIndex}");
 				FloodFillRecursive(adjacentTileIndex);
 			}
-		}
+		}		
 	}
 }
