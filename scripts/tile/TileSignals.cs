@@ -9,12 +9,17 @@ public partial class Tile : Button
 	{
 		if (inputEvent is InputEventMouseButton && inputEvent.IsPressed())
 		{
-
-			if (!isHovered) return;
+			if (!isHovered || gameManager.gameState != GameManager.GameState.ACTIVE) return;
 			InputEventMouseButton inputEventMouseButton = inputEvent as InputEventMouseButton;
 
 			if (inputEventMouseButton.ButtonIndex == MouseButton.Left)
 			{
+				if (isBomb)
+				{
+					gameManager.GameLost(gridIndex);
+					return;
+				}
+
 				if (!isRevealed && !isFlagged) gameManager.FloodFill(gridIndex);
 			} else if (inputEventMouseButton.ButtonIndex == MouseButton.Right)
 			{

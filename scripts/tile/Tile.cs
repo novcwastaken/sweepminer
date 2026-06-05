@@ -32,6 +32,7 @@ public partial class Tile : Button
 	[Export] public TextureRect bombSprite;
 	[Export] public TextureRect coverSprite;
 	[Export] public TextureRect flagSprite;
+	[Export] public ColorRect triggeredBombBG;
 	[Export] public Label numberLabel;
 	[Export] public Label debugIndexLabel;
 

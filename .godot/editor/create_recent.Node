@@ -1,3 +1,4 @@
+ColorRect
 Label
 Timer
 TextEdit
@@ -6,5 +7,4 @@ Button
 Node
 TextureRect
 Sprite2D
-ColorRect
 GridContainer

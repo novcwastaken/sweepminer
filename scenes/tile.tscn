@@ -28,7 +28,7 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("7_a2bny")
 font_color = Color(1, 0, 0, 1)
 
-[node name="Tile" type="Button" unique_id=1710769256 node_paths=PackedStringArray("emptySprite", "bombSprite", "coverSprite", "flagSprite", "numberLabel", "debugIndexLabel")]
+[node name="Tile" type="Button" unique_id=1710769256 node_paths=PackedStringArray("emptySprite", "bombSprite", "coverSprite", "flagSprite", "triggeredBombBG", "numberLabel", "debugIndexLabel")]
 clip_contents = true
 custom_minimum_size = Vector2(16, 16)
 offset_right = 8.0
@@ -42,6 +42,7 @@ emptySprite = NodePath("EmptySprite")
 bombSprite = NodePath("BombSprite")
 coverSprite = NodePath("CoverSprite")
 flagSprite = NodePath("FlagSprite")
+triggeredBombBG = NodePath("TriggeredBombBG")
 numberLabel = NodePath("NumberLabel")
 debugIndexLabel = NodePath("DebugIndexLabel")
 
@@ -50,6 +51,13 @@ layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("1_3dk36")
+
+[node name="TriggeredBombBG" type="ColorRect" parent="." unique_id=590537683]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(1, 0, 0, 1)
 
 [node name="BombSprite" type="TextureRect" parent="." unique_id=525203231]
 visible = false
@@ -70,6 +78,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CoverSprite" type="TextureRect" parent="." unique_id=276864385]
+self_modulate = Color(1, 1, 1, 0.5019608)
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0

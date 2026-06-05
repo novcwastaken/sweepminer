@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bm72u0un5j6g" path="res://scripts/game/GameManager.cs" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bg6i5k4odlj4d" path="res://scenes/tile.tscn" id="3_lnu2h"]
 
-[node name="b" type="Control" unique_id=618992731 node_paths=PackedStringArray("tileGrid", "widthInput", "heightInput", "bombCountInput", "genTimer", "genTimeLabel")]
+[node name="Game" type="Control" unique_id=618992731 node_paths=PackedStringArray("tileGrid", "widthInput", "heightInput", "bombCountInput", "genTimer", "genTimeLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

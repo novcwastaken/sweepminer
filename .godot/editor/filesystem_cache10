@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1780569387
+::res://::1780663070
 icon.svg::CompressedTexture2D::3293757461368704493::1780471918::1780471918::1::::<><><>0<>0<>ae912a528c38355a078a8f0ae4fe1357<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://fonts/::1780471918
 ARCADECLASSIC.TTF::FontFile::8093917412073069591::1780471918::1780471918::1::::<><><>0<>0<>a083bfdd912fb5d1cfde85261a195114<>res://.godot/imported/ARCADECLASSIC.TTF-ce1c6362ebb2bee1f8ee05dd870cd3b3.fontdata::
@@ -9,15 +9,15 @@ upheavtt.ttf::FontFile::4032776652932044130::1780471918::1780471918::1::::<><><>
 ::res://resources/::1780471918
 ::res://resources/themes/::1780471918
 game_theme.tres::Theme::8996999552232816892::1780471918::0::1::::<><><>0<>0<><>::uid://bft2rwo0paq5i::::res://fonts/BlockCraft.otf
-::res://scenes/::1780476801
-game.tscn::PackedScene::8717102495053835665::1780476643::0::1::::<><><>0<>0<><>::uid://d1ghjd8i0ibg3::::res://resources/themes/game_theme.tres<>uid://bm72u0un5j6g::::res://scripts/game/GameManager.cs<>uid://bg6i5k4odlj4d::::res://scenes/tile.tscn
-tile.tscn::PackedScene::2872089336329805193::1780476801::0::1::::<><><>0<>0<><>::uid://clht674lq5mwf::::res://sprites/tile_empty.png<>uid://uxj3ktil27jn::::res://scripts/tile/Tile.cs<>uid://ckut6nnih5jqk::::res://sprites/bomb.png<>uid://dpqfj6gcovyr6::::res://sprites/tile_cover.png<>uid://bxpriicqqg8mw::::res://fonts/upheavtt.ttf<>uid://bsf0dn5rusx4y::::res://sprites/flag.png<>uid://bft2rwo0paq5i::::res://fonts/BlockCraft.otf
+::res://scenes/::1780570620
+game.tscn::PackedScene::8717102495053835665::1780570620::0::1::::<><><>0<>0<><>::uid://d1ghjd8i0ibg3::::res://resources/themes/game_theme.tres<>uid://bm72u0un5j6g::::res://scripts/game/GameManager.cs<>uid://bg6i5k4odlj4d::::res://scenes/tile.tscn
+tile.tscn::PackedScene::2872089336329805193::1780570188::0::1::::<><><>0<>0<><>::uid://clht674lq5mwf::::res://sprites/tile_empty.png<>uid://uxj3ktil27jn::::res://scripts/tile/Tile.cs<>uid://ckut6nnih5jqk::::res://sprites/bomb.png<>uid://dpqfj6gcovyr6::::res://sprites/tile_cover.png<>uid://bxpriicqqg8mw::::res://fonts/upheavtt.ttf<>uid://bsf0dn5rusx4y::::res://sprites/flag.png<>uid://bft2rwo0paq5i::::res://fonts/BlockCraft.otf
 ::res://scripts/::1780471918
 ::res://scripts/game/::1780471918
-GameManager.cs::CSharpScript::96953626905093448::1780479106::0::1::::<>Node<><>0<>0<><>::
+GameManager.cs::CSharpScript::96953626905093448::1780570650::0::1::::<>Node<><>0<>0<><>::
 GameManagerDebug.cs::CSharpScript::4507333521981753923::1780471918::0::1::::<><><>0<>0<><>::
 ::res://scripts/tile/::1780471918
-Tile.cs::CSharpScript::1451854571232324743::1780471918::0::1::::<>Button<><>0<>0<><>::
+Tile.cs::CSharpScript::1451854571232324743::1780570710::0::1::::<>Button<><>0<>0<><>::
 TileSignals.cs::CSharpScript::6195919307950365979::1780471918::0::1::::<><><>0<>0<><>::
 ::res://sprites/::1780471918
 bomb.png::CompressedTexture2D::5517227044581373166::1780471918::1780471918::1::::<><><>0<>0<>4f83766620449ddbf845eab388d0c75f<>res://.godot/imported/bomb.png-e64aff15375a44d3869552d2ac455436.ctex::

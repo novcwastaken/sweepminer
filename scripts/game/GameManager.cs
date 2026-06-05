@@ -11,6 +11,9 @@ public partial class GameManager : Node
 
 	Random random = new Random();
 
+	public GameState gameState = GameState.INACTIVE;
+	public bool isGameOver = false;
+
 	[Export] public GridContainer tileGrid;
 	[Export] PackedScene tileScene;
 
@@ -22,6 +25,11 @@ public partial class GameManager : Node
 	[Export] Timer genTimer;
 	[Export] Label genTimeLabel;
 
+	public enum GameState
+	{
+		INACTIVE, ACTIVE, WON, LOST
+	}
+
 	public override void _Ready()
 	{
 		GenerateMap(9, 9, 10);
@@ -29,6 +37,9 @@ public partial class GameManager : Node
 
 	void GenerateMap(int width, int height, int mineCount)
 	{
+		gameState = GameState.ACTIVE;
+		UpdateIsGameOver();
+
 		currentWidth = width;
 		currentHeight = height;
 
@@ -37,7 +48,8 @@ public partial class GameManager : Node
 		// Add tiles
 		for (int i = 0; i < width * height; i++)
 		{
-			Tile newTile = tileScene.Instantiate<Tile>();			
+			Tile newTile = tileScene.Instantiate<Tile>();		
+			
 			newTile.gridIndex = i;
 			newTile.debugIndexLabel.Text = i.ToString();
 			newTile.gridCoordinates = newTile.TileIndexToCoordinates(i, width);
@@ -106,5 +118,26 @@ public partial class GameManager : Node
 				FloodFillRecursive(adjacentTileIndex);
 			}
 		}		
+	}
+
+	private void UpdateIsGameOver()
+	{
+		if (gameState == GameState.LOST || gameState == GameState.WON) isGameOver = true;
+	}
+
+	public void GameLost(int triggeredBombTileIndex)
+	{
+		gameState = GameState.LOST;
+		UpdateIsGameOver();
+
+		Tile triggeredBombTile = tileGrid.GetChild<Tile>(triggeredBombTileIndex);
+		triggeredBombTile.Reveal();
+		triggeredBombTile.triggeredBombBG.Visible = true;
+
+		foreach (var t in tileGrid.GetChildren())
+		{
+			Tile tile = t as Tile;
+			if (tile.isBomb) tile.Reveal();
+		}
 	}
 }

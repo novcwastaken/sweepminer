@@ -1,3 +1,4 @@
 res://scripts/tile/Tile.cs
 res://scripts/game/GameManager.cs
 res://scenes/tile.tscn
+res://scripts/tile/TileSignals.cs
