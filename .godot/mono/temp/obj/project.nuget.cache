@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "XVnHeXN5QPU=",
+  "dgSpecHash": "bixglsSnAy+WFHuc0dw5bmBLj+zE55QgW4dOqo0KVD5HbBSrkSgvushhCDovUex8YNOCCFy+3Ww3Jm926ZArEw==",
   "success": true,
-  "projectFilePath": "/home/novc/Dev/Godot/sweepminer/SWEEPMINER.csproj",
+  "projectFilePath": "/home/novc/Programming/Godot/sweepminer/SWEEPMINER.csproj",
   "expectedPackageFiles": [
-    "/home/novc/.nuget/packages/godot.sourcegenerators/4.6.2/godot.sourcegenerators.4.6.2.nupkg.sha512",
-    "/home/novc/.nuget/packages/godotsharp/4.6.2/godotsharp.4.6.2.nupkg.sha512",
-    "/home/novc/.nuget/packages/godotsharpeditor/4.6.2/godotsharpeditor.4.6.2.nupkg.sha512",
-    "/home/novc/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.25/microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
+    "/home/novc/.nuget/packages/godot.sourcegenerators/4.6.3/godot.sourcegenerators.4.6.3.nupkg.sha512",
+    "/home/novc/.nuget/packages/godotsharp/4.6.3/godotsharp.4.6.3.nupkg.sha512",
+    "/home/novc/.nuget/packages/godotsharpeditor/4.6.3/godotsharpeditor.4.6.3.nupkg.sha512",
+    "/home/novc/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.27/microsoft.aspnetcore.app.ref.8.0.27.nupkg.sha512"
   ],
   "logs": []
 }

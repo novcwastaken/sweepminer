@@ -3,8 +3,25 @@
 [ext_resource type="Theme" uid="uid://d1ghjd8i0ibg3" path="res://resources/themes/game_theme.tres" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bm72u0un5j6g" path="res://scripts/game/GameManager.cs" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bg6i5k4odlj4d" path="res://scenes/tile.tscn" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://hfmkoapqd8je" path="res://sprites/map_border_bottom.png" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://cv82q3iq8piil" path="res://sprites/map_border_top.png" id="5_iywne"]
+[ext_resource type="FontFile" uid="uid://d3e645xgwaqme" path="res://fonts/Px437_IBM_VGA_8x14.ttf" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://dpqfj6gcovyr6" path="res://sprites/tile_cover.png" id="7_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://clht674lq5mwf" path="res://sprites/tile_empty.png" id="8_gee14"]
 
-[node name="Game" type="Control" unique_id=618992731 node_paths=PackedStringArray("tileGrid", "widthInput", "heightInput", "bombCountInput", "genTimer", "genTimeLabel")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gee14"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5sy4"]
+font = ExtResource("6_p57ef")
+font_color = Color(1, 0, 0, 1)
+
+[node name="Game" type="Control" unique_id=618992731 node_paths=PackedStringArray("tileGrid", "tileGridBorder", "infoPanelBorder", "flagCountLabel", "widthInput", "heightInput", "bombCountInput", "genTimer", "genTimeLabel", "stateLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,11 +32,15 @@ theme = ExtResource("1_uwrxv")
 script = ExtResource("2_yqjtg")
 tileGrid = NodePath("TileGrid")
 tileScene = ExtResource("3_lnu2h")
+tileGridBorder = NodePath("TileGridBorder")
+infoPanelBorder = NodePath("InfoPanelBorder")
+flagCountLabel = NodePath("InfoPanelBorder/FlagCount/FlagCountLabel")
 widthInput = NodePath("DebugPanel/WidthInput")
 heightInput = NodePath("DebugPanel/HeightInput")
 bombCountInput = NodePath("DebugPanel/BombCountInput")
 genTimer = NodePath("DebugPanel/GenTimer")
 genTimeLabel = NodePath("DebugPanel/GenTimeLabel")
+stateLabel = NodePath("DebugPanel/StateLabel")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1929562310]
 layout_mode = 1
@@ -29,6 +50,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.83137256, 0.8156863, 0.78431374, 1)
+metadata/_edit_lock_ = true
+
+[node name="TileGridBorder" type="NinePatchRect" parent="." unique_id=183977801]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("4_lbhrr")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
 
 [node name="TileGrid" type="GridContainer" parent="." unique_id=1023255094]
 custom_minimum_size = Vector2(16, 16)
@@ -49,6 +93,73 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 9
 metadata/_edit_group_ = true
+
+[node name="InfoPanelBorder" type="NinePatchRect" parent="." unique_id=1296353449]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -20.0
+offset_right = 128.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("5_iywne")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="FlagCount" type="Panel" parent="InfoPanelBorder" unique_id=1943874521]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -8.0
+offset_right = 41.0
+offset_bottom = 8.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gee14")
+
+[node name="FlagCountLabel" type="Label" parent="InfoPanelBorder/FlagCount" unique_id=1728497900]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -7.0
+offset_right = 12.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "000"
+label_settings = SubResource("LabelSettings_u5sy4")
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="InfoPanelBorder" unique_id=41114661]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_u5sy4")
+texture_pressed = ExtResource("8_gee14")
 
 [node name="DebugPanel" type="Panel" parent="." unique_id=1835020049]
 layout_mode = 0
@@ -99,5 +210,12 @@ offset_top = 136.0
 offset_right = 184.0
 offset_bottom = 152.0
 text = "Took 0.00 ms"
+
+[node name="StateLabel" type="Label" parent="DebugPanel" unique_id=1402942383]
+layout_mode = 0
+offset_top = 152.0
+offset_right = 184.0
+offset_bottom = 168.0
+text = "State: -- "
 
 [connection signal="pressed" from="DebugPanel/GenerateMapButton" to="." method="OnGenerateMapButtonPressed"]

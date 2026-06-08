@@ -15,7 +15,7 @@ public partial class GameManager : Node
 		}
 		
 		var startTime = Time.GetTicksMsec();
-		GenerateMap(newWidth, newHeight, newMineCount);
+		GenerateEmptyMap(newWidth, newHeight, newMineCount);
 		var endTime = Time.GetTicksMsec();
 
 		double elapsed = endTime - startTime;

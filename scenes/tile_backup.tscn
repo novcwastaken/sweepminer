@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://dhigjtl7v3bne"]
+
+[ext_resource type="Script" uid="uid://uxj3ktil27jn" path="res://scripts/tile/Tile.cs" id="1_lxkeb"]
+[ext_resource type="Texture2D" uid="uid://clht674lq5mwf" path="res://sprites/tile_empty.png" id="2_ga1xm"]
+[ext_resource type="Texture2D" uid="uid://ckut6nnih5jqk" path="res://sprites/bomb.png" id="3_kkot3"]
+[ext_resource type="FontFile" uid="uid://bxpriicqqg8mw" path="res://fonts/upheavtt.ttf" id="4_q4pkd"]
+[ext_resource type="Texture2D" uid="uid://dpqfj6gcovyr6" path="res://sprites/tile_cover.png" id="5_tk5lt"]
+[ext_resource type="Texture2D" uid="uid://bsf0dn5rusx4y" path="res://sprites/flag.png" id="6_1pxjp"]
+[ext_resource type="Texture2D" uid="uid://eei733y2itqt" path="res://sprites/wrong_flag.png" id="7_egl27"]
+[ext_resource type="FontFile" uid="uid://bft2rwo0paq5i" path="res://fonts/BlockCraft.otf" id="8_au42k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtpg2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 1, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_q7utx"]
+font = ExtResource("4_q4pkd")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gtpg2"]
+font = ExtResource("8_au42k")
+font_color = Color(1, 0, 0, 1)
+
+[node name="Tile" type="Button" unique_id=1710769256 node_paths=PackedStringArray("emptySprite", "bombSprite", "coverSprite", "flagSprite", "wrongFlagSprite", "triggeredBombBG", "numberLabel", "debugIndexLabel")]
+clip_contents = true
+custom_minimum_size = Vector2(16, 16)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gtpg2")
+action_mode = 0
+button_mask = 7
+flat = true
+script = ExtResource("1_lxkeb")
+emptySprite = NodePath("EmptySprite")
+bombSprite = NodePath("BombSprite")
+coverSprite = NodePath("CoverSprite")
+flagSprite = NodePath("FlagSprite")
+wrongFlagSprite = NodePath("WrongFlagSprite")
+triggeredBombBG = NodePath("TriggeredBombBG")
+numberLabel = NodePath("NumberLabel")
+debugIndexLabel = NodePath("DebugIndexLabel")
+
+[node name="EmptySprite" type="TextureRect" parent="." unique_id=1773675593]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("2_ga1xm")
+
+[node name="TriggeredBombBG" type="ColorRect" parent="." unique_id=590537683]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(1, 0, 0, 1)
+
+[node name="BombSprite" type="TextureRect" parent="." unique_id=525203231]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("3_kkot3")
+
+[node name="NumberLabel" type="Label" parent="." unique_id=669546046]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 25.0
+offset_bottom = 24.0
+text = "?"
+label_settings = SubResource("LabelSettings_q7utx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoverSprite" type="TextureRect" parent="." unique_id=276864385]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("5_tk5lt")
+
+[node name="FlagSprite" type="TextureRect" parent="." unique_id=1364881672]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("6_1pxjp")
+
+[node name="WrongFlagSprite" type="TextureRect" parent="." unique_id=1076819576]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("7_egl27")
+
+[node name="DebugIndexLabel" type="Label" parent="." unique_id=863600319]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+text = "i"
+label_settings = SubResource("LabelSettings_gtpg2")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="button_down" from="." to="." method="OnTileButtonDown"]
+[connection signal="mouse_entered" from="." to="." method="OnMouseEntered"]
+[connection signal="mouse_exited" from="." to="." method="OnMouseExited"]

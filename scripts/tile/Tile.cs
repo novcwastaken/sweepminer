@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class Tile : Button
+public partial class Tile : TextureButton
 {
 	public bool isBomb = false;
 	public bool isRevealed = false;
@@ -28,10 +28,11 @@ public partial class Tile : Button
 	};
 
 	public GameManager gameManager;
-	[Export] public TextureRect emptySprite;
+	//[Export] public TextureRect emptySprite;
 	[Export] public TextureRect bombSprite;
 	[Export] public TextureRect coverSprite;
 	[Export] public TextureRect flagSprite;
+	[Export] public TextureRect wrongFlagSprite;
 	[Export] public ColorRect triggeredBombBG;
 	[Export] public Label numberLabel;
 	[Export] public Label debugIndexLabel;
@@ -53,6 +54,8 @@ public partial class Tile : Button
 		if (isRevealed || isFlagged) return;
 		coverSprite.Visible = false;
 		isRevealed = true;
+
+		Disabled = true;
 	}
 
 	public void SetNumberColor()

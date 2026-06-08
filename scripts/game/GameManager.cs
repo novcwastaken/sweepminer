@@ -6,6 +6,9 @@ public partial class GameManager : Node
 {
 	public int currentWidth = 9;
 	public int currentHeight = 9;
+	public int currentBombCount = 10;
+
+	public int currentRemainingFlagCount = 0;
 
 	private List<int> visitedFloodFillIndexes = new List<int>();
 
@@ -16,6 +19,10 @@ public partial class GameManager : Node
 
 	[Export] public GridContainer tileGrid;
 	[Export] PackedScene tileScene;
+	[Export] NinePatchRect tileGridBorder;
+	[Export] NinePatchRect infoPanelBorder;
+
+	[Export] public Label flagCountLabel;
 
 	[ExportGroup("Debug")]
 	[ExportSubgroup("Map Generation")]
@@ -24,6 +31,7 @@ public partial class GameManager : Node
 	[Export] TextEdit bombCountInput;
 	[Export] Timer genTimer;
 	[Export] Label genTimeLabel;
+	[Export] Label stateLabel;
 
 	public enum GameState
 	{
@@ -32,18 +40,34 @@ public partial class GameManager : Node
 
 	public override void _Ready()
 	{
-		GenerateMap(9, 9, 10);
+		GenerateEmptyMap(9, 9, 10);
 	}
 
-	void GenerateMap(int width, int height, int mineCount)
+	public override void _Process(double _delta)
 	{
-		gameState = GameState.ACTIVE;
+		stateLabel.Text = $"State: {gameState}";
+	}
+
+	public void GenerateEmptyMap(int width, int height, int mineCount)
+	{
+		gameState = GameState.INACTIVE;
 		UpdateIsGameOver();
 
 		currentWidth = width;
 		currentHeight = height;
+		currentBombCount = mineCount;
 
 		tileGrid.Columns = width;
+
+		// Adjust 9-slice grid border & 9-slice info panel border
+		tileGridBorder.SetSize(new Vector2(16 + currentWidth * 16, 16 + currentHeight * 16));
+		tileGridBorder.SetPosition(GetViewport().GetVisibleRect().Size / 2 - tileGridBorder.GetSize() / 2);
+
+		infoPanelBorder.SetSize(new Vector2(16 + currentWidth * 16, 40));
+		infoPanelBorder.SetPosition(GetViewport().GetVisibleRect().Size / 2 - infoPanelBorder.GetSize() / 2 + new Vector2(0, -(tileGridBorder.Size.Y / 2) - 12));
+
+		currentRemainingFlagCount = 0;
+		flagCountLabel.Text = PadTo3Digits(currentBombCount);
 
 		// Add tiles
 		for (int i = 0; i < width * height; i++)
@@ -58,6 +82,15 @@ public partial class GameManager : Node
 			newTile.Name = $"Tile_{i}";
 			tileGrid.AddChild(newTile);
 		}
+	}
+
+	public void GenerateBombs(int width, int height, int mineCount, int firstClickIndex)
+	{
+		gameState = GameState.ACTIVE;
+		UpdateIsGameOver();
+
+		// Set safe indexes for guaranteed safe open
+		List<int> safeIndexes = [firstClickIndex, .. tileGrid.GetChild<Tile>(firstClickIndex).adjacentTileIndexes];
 
 		// Add bombs
 		mineCount = Math.Min(mineCount, width * height);
@@ -67,7 +100,7 @@ public partial class GameManager : Node
 			int index = random.Next(0, width * height);
 			Tile newBombTile = tileGrid.GetChild<Tile>(index);
 
-			while (newBombTile.isBomb)
+			while (newBombTile.isBomb || safeIndexes.Contains(index))
 			{
 				index = random.Next(0, width * height);
 				newBombTile = tileGrid.GetChild<Tile>(index);
@@ -138,6 +171,19 @@ public partial class GameManager : Node
 		{
 			Tile tile = t as Tile;
 			if (tile.isBomb) tile.Reveal();
+
+			if (tile.isFlagged && !tile.isBomb)
+			{
+				tile.flagSprite.Visible = false;
+				tile.wrongFlagSprite.Visible = true;
+			}
 		}
+	}
+
+	public string PadTo3Digits(int number)
+	{
+		if (number < 10) return "00" + number;
+		else if (number < 100) return "0" + number;
+		else return number.ToString();
 	}
 }

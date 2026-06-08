@@ -33,3 +33,4 @@
 /home/novc/Dev/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.pdb
 /home/novc/Dev/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.genruntimeconfig.cache
 /home/novc/Dev/Godot/sweepminer/.godot/mono/temp/obj/Debug/ref/SWEEPMINER.dll
+/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/Debug/SWEEPMINER.sourcelink.json

@@ -1,9 +1,11 @@
-ColorRect
+Panel
+TextureButton
+Button
 Label
+NinePatchRect
+ColorRect
 Timer
 TextEdit
-Panel
-Button
 Node
 TextureRect
 Sprite2D

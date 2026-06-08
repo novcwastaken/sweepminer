@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/novc/Dev/Godot/sweepminer/SWEEPMINER.csproj": {}
+    "/home/novc/Programming/Godot/sweepminer/SWEEPMINER.csproj": {}
   },
   "projects": {
-    "/home/novc/Dev/Godot/sweepminer/SWEEPMINER.csproj": {
+    "/home/novc/Programming/Godot/sweepminer/SWEEPMINER.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/novc/Dev/Godot/sweepminer/SWEEPMINER.csproj",
+        "projectUniqueName": "/home/novc/Programming/Godot/sweepminer/SWEEPMINER.csproj",
         "projectName": "SWEEPMINER",
-        "projectPath": "/home/novc/Dev/Godot/sweepminer/SWEEPMINER.csproj",
+        "projectPath": "/home/novc/Programming/Godot/sweepminer/SWEEPMINER.csproj",
         "packagesPath": "/home/novc/.nuget/packages/",
-        "outputPath": "/home/novc/Dev/Godot/sweepminer/.godot/mono/temp/obj/",
+        "outputPath": "/home/novc/Programming/Godot/sweepminer/.godot/mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/novc/.nuget/NuGet/NuGet.Config"
@@ -32,31 +32,26 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
             "Godot.SourceGenerators": {
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[4.6.2, )",
+              "version": "[4.6.3, )",
               "autoReferenced": true
             },
             "GodotSharp": {
               "target": "Package",
-              "version": "[4.6.2, )",
+              "version": "[4.6.3, )",
               "autoReferenced": true
             },
             "GodotSharpEditor": {
               "target": "Package",
-              "version": "[4.6.2, )",
+              "version": "[4.6.3, )",
               "autoReferenced": true
             }
           },
@@ -74,7 +69,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.25, 8.0.25]"
+              "version": "[8.0.27, 8.0.27]"
             }
           ],
           "frameworkReferences": {
@@ -82,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.104/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.127/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
