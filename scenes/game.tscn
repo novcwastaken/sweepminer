@@ -21,6 +21,10 @@ corner_detail = 5
 font = ExtResource("6_p57ef")
 font_color = Color(1, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_gee14"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
 [node name="Game" type="Control" unique_id=618992731 node_paths=PackedStringArray("tileGrid", "tileGridBorder", "infoPanelBorder", "flagCountLabel", "widthInput", "heightInput", "bombCountInput", "genTimer", "genTimeLabel", "stateLabel")]
 layout_mode = 3
 anchors_preset = 15
@@ -41,6 +45,7 @@ bombCountInput = NodePath("DebugPanel/BombCountInput")
 genTimer = NodePath("DebugPanel/GenTimer")
 genTimeLabel = NodePath("DebugPanel/GenTimeLabel")
 stateLabel = NodePath("DebugPanel/StateLabel")
+metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="." unique_id=1929562310]
 layout_mode = 1
@@ -145,7 +150,7 @@ text = "000"
 label_settings = SubResource("LabelSettings_u5sy4")
 vertical_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="InfoPanelBorder" unique_id=41114661]
+[node name="ResetButton" type="TextureButton" parent="InfoPanelBorder" unique_id=41114661]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -160,6 +165,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("7_u5sy4")
 texture_pressed = ExtResource("8_gee14")
+
+[node name="Label" type="Label" parent="InfoPanelBorder/ResetButton" unique_id=984252235]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 16.0
+offset_bottom = 16.0
+text = ":)"
+label_settings = SubResource("LabelSettings_gee14")
+horizontal_alignment = 1
 
 [node name="DebugPanel" type="Panel" parent="." unique_id=1835020049]
 layout_mode = 0
@@ -218,4 +232,5 @@ offset_right = 184.0
 offset_bottom = 168.0
 text = "State: -- "
 
+[connection signal="pressed" from="InfoPanelBorder/ResetButton" to="." method="OnResetButtonPressed"]
 [connection signal="pressed" from="DebugPanel/GenerateMapButton" to="." method="OnGenerateMapButtonPressed"]

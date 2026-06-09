@@ -9,7 +9,7 @@ public partial class GameManager : Node
 		int newHeight = heightInput.Text.ToInt();
 		int newMineCount = bombCountInput.Text.ToInt();
 
-		foreach (var child in tileGrid.GetChildren())
+		foreach (Node child in tileGrid.GetChildren())
 		{
 			child.Free(); // Use Free(), NOT evil ass rape QueueFree()
 		}

@@ -186,4 +186,9 @@ public partial class GameManager : Node
 		else if (number < 100) return "0" + number;
 		else return number.ToString();
 	}
+
+	void OnResetButtonPressed()
+	{
+		GetTree().ReloadCurrentScene();
+	}
 }

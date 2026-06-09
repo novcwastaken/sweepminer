@@ -12,9 +12,9 @@ public partial class Tile : TextureButton {
 					if (gameManager.gameState == GameManager.GameState.INACTIVE)
 					{
 						gameManager.GenerateBombs(gameManager.currentWidth, gameManager.currentHeight, gameManager.currentBombCount, gridIndex);
-
-						if (!isRevealed && !isFlagged) gameManager.FloodFill(gridIndex);
 					}
+
+					if (!isRevealed && !isFlagged) gameManager.FloodFill(gridIndex);
 
 					if (isBomb)
 					{
@@ -41,8 +41,9 @@ public partial class Tile : TextureButton {
 
 					foreach (int ati in adjacentTileIndexes)
 					{
-						Tile adjacentTile = gameManager.tileGrid.GetChild<Tile>(ati);
-						adjacentTile.Reveal();
+						//Tile adjacentTile = gameManager.tileGrid.GetChild<Tile>(ati);
+						//adjacentTile.Reveal();
+						gameManager.FloodFill(ati);
 					}
 
 					break;

@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v8.0": {
       "SWEEPMINER/1.0.0": {
         "dependencies": {
-          "Godot.SourceGenerators": "4.6.3",
           "GodotSharp": "4.6.3",
           "GodotSharpEditor": "4.6.3"
         },
@@ -16,7 +15,6 @@
           "SWEEPMINER.dll": {}
         }
       },
-      "Godot.SourceGenerators/4.6.3": {},
       "GodotSharp/4.6.3": {
         "runtime": {
           "lib/net8.0/GodotSharp.dll": {
@@ -43,13 +41,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "Godot.SourceGenerators/4.6.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-tDEpdpIxCAGEFPCqBQmRIICHmU6RyNIdgBmAK8V1ZjJqvPNMsVAp+7aJXCSyrfXVCEywsd4GMkpgXIYc8JtNUw==",
-      "path": "godot.sourcegenerators/4.6.3",
-      "hashPath": "godot.sourcegenerators.4.6.3.nupkg.sha512"
     },
     "GodotSharp/4.6.3": {
       "type": "package",

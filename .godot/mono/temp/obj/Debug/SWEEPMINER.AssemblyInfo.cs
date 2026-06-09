@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SWEEPMINER")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ada1d5ae8d4b25f93f3db73ae11cf4e0f41277ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0a63fd6be2647121ef42e9d9c6b874a810c8763")]
 [assembly: System.Reflection.AssemblyProductAttribute("SWEEPMINER")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SWEEPMINER")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
